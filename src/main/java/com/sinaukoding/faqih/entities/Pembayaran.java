@@ -1,10 +1,12 @@
 package com.sinaukoding.faqih.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +20,9 @@ public class Pembayaran {
     private Integer idPembayaran;
 
     @Column(name = "tgl_pembayaran")
-    private String tglPembayaran;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date tglPembayaran;
 
     @Column(name = "total_pembayaran")
     private Integer totalPembayaran;

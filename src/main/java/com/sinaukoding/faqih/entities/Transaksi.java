@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "transaksi")
@@ -35,7 +36,7 @@ public class Transaksi {
     @Column(name = "tgl_transaksi")
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private String tglTransaksi;
+    private Date tglTransaksi;
 
     @Column(name = "keterangan")
     private String keterangan;

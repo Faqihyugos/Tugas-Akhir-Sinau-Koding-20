@@ -4,6 +4,7 @@ import com.sinaukoding.faqih.entities.Transaksi;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -11,7 +12,7 @@ import java.util.List;
 public class PembayaranDTO {
     private Integer id;
 
-    private String tgl_pembayaran;
+    private Date tgl_pembayaran;
 
     private Integer total_bayar;
 
