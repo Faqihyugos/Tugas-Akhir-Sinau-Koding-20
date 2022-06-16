@@ -15,15 +15,15 @@ public class Response implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     Object data;
     String message;
-    HttpStatus httpStatus;
+    HttpStatus http_status;
 
     public Response(String message, HttpStatus httpStatus) {
         this.message = message;
-        this.httpStatus = httpStatus;
+        this.http_status = httpStatus;
     }
     public Response( String message, HttpStatus httpStatus,Object object){
         this.message = message;
-        this.httpStatus = httpStatus;
+        this.http_status = httpStatus;
         this.data = object;
     }
 }
