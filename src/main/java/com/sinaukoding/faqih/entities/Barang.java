@@ -2,6 +2,7 @@ package com.sinaukoding.faqih.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sinaukoding.faqih.entities.dto.SupplierDTO;
 import lombok.Getter;
 import lombok.Setter;
 

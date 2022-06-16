@@ -32,11 +32,12 @@ public class BarangService {
 
     // update barang
     public BarangDTO updateBarang(Integer id, BarangDTO barangDTO) {
-        Barang barang = barangRepo.findById(id).get();
-        barang.setNamaBarang(barangDTO.getNama_barang() != null ? barangDTO.getNama_barang() : barang.getNamaBarang());
-        barang.setHargaBarang(barangDTO.getHarga_barang() != null ? barangDTO.getHarga_barang() : barang.getHargaBarang());
-        barang.setStokBarang(barangDTO.getStok_barang() != null ? barangDTO.getStok_barang() : barang.getStokBarang());
-        return BarangMapper.INSTANCE.toDto(barangRepo.save(barang));
+        Barang reference = barangRepo.findById(id).get();
+        reference.setNamaBarang(barangDTO.getNama_barang() != null ? barangDTO.getNama_barang() : reference.getNamaBarang());
+        reference.setHargaBarang(barangDTO.getHarga_barang() != null ? barangDTO.getHarga_barang() : reference.getHargaBarang());
+        reference.setStokBarang(barangDTO.getStok_barang() != null ? barangDTO.getStok_barang() : reference.getStokBarang());
+        reference.setSupplier(barangDTO.getData_supplier() != null ? barangDTO.getData_supplier(): reference.getSupplier());
+        return BarangMapper.INSTANCE.toDto(barangRepo.save(reference));
     }
 
     // delete barang

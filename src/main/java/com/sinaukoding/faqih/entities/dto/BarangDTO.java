@@ -16,6 +16,6 @@ public class BarangDTO {
 
     private Integer stok_barang;
 
-    @JsonIgnoreProperties(value = {"listBarang","hibernateLazyInitializer", "handler"}, allowSetters = true)
-    private Supplier supplier;
+    @JsonIgnoreProperties(value = {"listBarang","handler","hibernateLazyInitializer"}, allowSetters = true)
+    private Supplier data_supplier;
 }
