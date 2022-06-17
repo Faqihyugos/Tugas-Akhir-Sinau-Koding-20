@@ -8,6 +8,8 @@ import com.sinaukoding.faqih.entities.Pembeli;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 public class TransaksiDTO {
@@ -23,7 +25,7 @@ public class TransaksiDTO {
     private Pembayaran pembayaran;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private String tgl_transaksi;
+    private Date tgl_transaksi;
 
     private String keterangan;
 }
