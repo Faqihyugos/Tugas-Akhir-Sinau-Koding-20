@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pembeli")
 public class PembeliController {
@@ -21,6 +23,12 @@ public class PembeliController {
     @GetMapping
     public Response getAllPembeli() {
         return new Response("Berhasil melihat semua pembeli", HttpStatus.OK, pembeliService.getAllPembeli());
+    }
+
+    @GetMapping("/find-name/")
+    public Response getPembeliByName(@RequestParam String name) {
+        List<PembeliDTO> data = pembeliService.getPembeliByName(name);
+        return new Response(data != null ? "Berhasil mengambil pembeli berdasarkan nama": "Data tidak ada", HttpStatus.OK,data);
     }
 
     @GetMapping("/{id}")

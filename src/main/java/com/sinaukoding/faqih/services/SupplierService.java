@@ -25,6 +25,11 @@ public class SupplierService {
         return SupplierMapper.INSTANCE.toDtoList(supplierRepo.findAll());
     }
 
+    // get supplier by name
+    public List<SupplierDTO> getSupplierByName(String name) {
+        return SupplierMapper.INSTANCE.toDtoList(supplierRepo.findByNamaSupplierContaining(name));
+    }
+
     // update supplier
     public SupplierDTO updateSupplier(Integer id, SupplierDTO supplierDTO) {
         Supplier reference = supplierRepo.findById(id).get();

@@ -1,12 +1,13 @@
 package com.sinaukoding.faqih.controllers;
 
 import com.sinaukoding.faqih.entities.dto.SupplierDTO;
-import com.sinaukoding.faqih.entities.mapper.SupplierMapper;
 import com.sinaukoding.faqih.services.SupplierService;
 import com.sinaukoding.faqih.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/supplier")
@@ -21,7 +22,14 @@ public class SupplierController {
 
     @GetMapping
     public Response getAllBarang() {
-        return new Response("Berhasil mengambil semua barang", HttpStatus.OK, supplierService.getAllSupplier());
+        List<SupplierDTO> data = supplierService.getAllSupplier();
+        return new Response(data != null ? "Berhasil mengambil semua barang" : "Data tidak ada", HttpStatus.OK, data);
+    }
+
+    @GetMapping("/find-name/")
+    public Response getSupplierByName(@RequestParam String name) {
+        List<SupplierDTO> data = supplierService.getSupplierByName(name);
+        return new Response(data != null ? "Berhasil mengambil barang berdasarkan nama" : "Data tidak ada", HttpStatus.OK, data);
     }
 
 

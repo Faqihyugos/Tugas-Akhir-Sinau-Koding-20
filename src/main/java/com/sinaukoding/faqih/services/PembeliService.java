@@ -30,6 +30,10 @@ public class PembeliService {
         return pembeliMapper.toDto(pembeliRepo.findById(id).get());
     }
 
+    public List<PembeliDTO> getPembeliByName(String name) {
+        return pembeliMapper.toDtoList(pembeliRepo.findByNamaPembeliContaining(name));
+    }
+
     public PembeliDTO updatePembeli(Integer id, PembeliDTO pembeliDTO) {
         Pembeli reference = pembeliRepo.findById(id).get();
         reference.setNamaPembeli(pembeliDTO.getNama_pembeli() != null ? pembeliDTO.getNama_pembeli() : reference.getNamaPembeli());

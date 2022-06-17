@@ -30,6 +30,11 @@ public class BarangService {
         return BarangMapper.INSTANCE.toDto(barangRepo.findById(id).get());
     }
 
+    // get barang by name
+    public List<BarangDTO> getBarangByName(String name) {
+        return BarangMapper.INSTANCE.toDtoList(barangRepo.findByNamaBarangContaining(name));
+    }
+
     // update barang
     public BarangDTO updateBarang(Integer id, BarangDTO barangDTO) {
         Barang reference = barangRepo.findById(id).get();
