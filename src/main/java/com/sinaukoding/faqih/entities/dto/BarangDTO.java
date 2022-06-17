@@ -12,7 +12,7 @@ public class BarangDTO {
 
     private String nama_barang;
 
-    private Integer harga_barang;
+    private Double harga_barang;
 
     private Integer stok_barang;
 

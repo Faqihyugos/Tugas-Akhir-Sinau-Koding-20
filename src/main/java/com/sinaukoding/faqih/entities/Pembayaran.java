@@ -19,13 +19,13 @@ public class Pembayaran {
     @Column(name = "id_pembayaran")
     private Integer idPembayaran;
 
-    @Column(name = "tgl_pembayaran")
+    @Column(name = "tgl_bayar")
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date tglPembayaran;
 
-    @Column(name = "total_pembayaran")
-    private Integer totalPembayaran;
+    @Column(name = "total")
+    private Double totalPembayaran;
 
     @OneToMany(mappedBy = "pembayaran", fetch = FetchType.LAZY)
     private List<Transaksi> listTransaksi = new ArrayList<>();

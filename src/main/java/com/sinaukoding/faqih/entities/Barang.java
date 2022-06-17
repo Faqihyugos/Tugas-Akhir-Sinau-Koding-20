@@ -22,7 +22,7 @@ public class Barang {
     private String namaBarang;
 
     @Column(name = "harga_barang")
-    private Integer hargaBarang;
+    private Double hargaBarang;
 
     @Column(name = "stok_barang")
     private Integer stokBarang;
