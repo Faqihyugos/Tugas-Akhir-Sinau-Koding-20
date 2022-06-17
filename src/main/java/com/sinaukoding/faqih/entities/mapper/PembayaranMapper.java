@@ -12,7 +12,7 @@ import java.util.List;
 public interface PembayaranMapper {
  PembayaranMapper INSTANCE = Mappers.getMapper(PembayaranMapper.class);
 
- //    @mapping karena field entity supplier dan entityDTO berbeda.
+ //    @mapping karena field entity dan entityDTO berbeda.
  @Mapping(source = "idPembayaran", target = "id")
  @Mapping(source = "tglPembayaran", target = "tgl_pembayaran")
  @Mapping(source = "totalPembayaran", target = "total_bayar")

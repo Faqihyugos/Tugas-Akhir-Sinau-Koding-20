@@ -11,13 +11,12 @@ import java.util.List;
 
 @Service
 public class PembayaranService {
+    PembayaranMapper pembayaranMapper = PembayaranMapper.INSTANCE;
     @Autowired
     PembayaranRepo pembayaranRepo;
 
-    PembayaranMapper pembayaranMapper;
-
     // create pembayaran
-    public PembayaranDTO createPemabayaran(PembayaranDTO pembayaranDTO) {
+    public PembayaranDTO createPembayaran(PembayaranDTO pembayaranDTO) {
         Pembayaran pembayaran = pembayaranRepo.save(pembayaranMapper.toEntity(pembayaranDTO));
         return pembayaranMapper.toDto(pembayaran);
     }

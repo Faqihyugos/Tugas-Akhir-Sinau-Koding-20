@@ -15,7 +15,7 @@ public class PembayaranController {
 
     @PostMapping
     public Response createPembayaran(@RequestBody PembayaranDTO pembayaranDTO) {
-        return new Response("Pembayaran berhasil ditambahkan", HttpStatus.CREATED, pembayaranService.createPemabayaran(pembayaranDTO));
+        return new Response("Pembayaran berhasil ditambahkan", HttpStatus.CREATED, pembayaranService.createPembayaran(pembayaranDTO));
     }
 
     @GetMapping("/{id}")

@@ -14,8 +14,6 @@ public class SupplierController {
     @Autowired
     SupplierService supplierService;
 
-    SupplierMapper supplierMapper;
-
     @PostMapping
     public Response createSupplier(@RequestBody SupplierDTO supplierDTO) {
         return new Response("Barang berhasil ditambahkan", HttpStatus.CREATED, supplierService.createSupplier(supplierDTO));
